@@ -29,6 +29,7 @@ public class App {
 			e.getMessage();
 			throw e;
 		} catch (IndexOutOfBoundsException e) {
+			System.out.println("Please make sure that the parameters are passed both bill and Typeofcustomer");
 			e.getMessage();
 			throw e;
 		} catch (IllegalArgumentException e) {
