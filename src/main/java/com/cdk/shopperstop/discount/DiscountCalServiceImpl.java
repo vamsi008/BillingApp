@@ -45,13 +45,21 @@ public class DiscountCalServiceImpl implements DiscountCalService {
 		Double totalBill = new Double(0);
 		if (temp <= 5000) {
 			Double precentageDeduction = tempDiscounts.get(DiscountRange.Below_5000);
-
+			if (precentageDeduction == null) {
+				precentageDeduction = new Double(0);
+			}
 			Double disc = temp * (precentageDeduction / 100);
 			totalBill = temp - disc;
 		} else {
 
 			Double precentageDeduction_5000 = tempDiscounts.get(DiscountRange.Below_5000);
+			if (precentageDeduction_5000 == null) {
+				precentageDeduction_5000 = new Double(0);
+			}
 			Double precentageDeduction_10000 = tempDiscounts.get(DiscountRange.Below_10000);
+			if (precentageDeduction_10000 == null) {
+				precentageDeduction_10000 = new Double(0);
+			}
 			if (temp > 5000 && temp <= 10000) {
 
 				Double disc1 = 5000 * (precentageDeduction_5000 / 100);
@@ -60,6 +68,9 @@ public class DiscountCalServiceImpl implements DiscountCalService {
 
 			} else {
 				Double precentageDeduction_above_10000 = tempDiscounts.get(DiscountRange.Above_10000);
+				if (precentageDeduction_above_10000 == null) {
+					precentageDeduction_above_10000 = new Double(0);
+				}
 				Double disc1 = 5000 * (precentageDeduction_5000 / 100);
 				Double disc2 = 5000 * (precentageDeduction_10000 / 100);
 				Double disc3 = (temp - 10000) * (precentageDeduction_above_10000 / 100);
