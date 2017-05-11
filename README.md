@@ -6,8 +6,11 @@
 **Objects**
 
 *CustomerDiscount* :: Object to maintain the discounts.
+
 *Customer* :: Object which preserves the customer type and customer related data.
+
 *CustomerBill*::Bill object which will maintain the customer and relevant original bill and the discounted bill information.
+
 DiscountDTO:: Discount DTO will contain all the information of the discount like upperBound,lowerBound,Discount details.
 
 
