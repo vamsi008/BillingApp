@@ -1,6 +1,5 @@
 package com.cdk.shopperstop.discount;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import com.cdk.shopperstop.bill.CustomerBill;
@@ -9,23 +8,7 @@ import com.cdk.shopperstop.client.CustomerType;
 
 public class DiscountCalServiceImpl implements DiscountCalService {
 
-	public static Map<CustomerType, CustomerDiscount> discountMap;
-
-	static {
-
-		discountMap = new HashMap<CustomerType, CustomerDiscount>();
-		Map<DiscountRange, Double> regular = new HashMap<DiscountRange, Double>();
-		regular.put(DiscountRange.Below_5000, new Double(0));
-		regular.put(DiscountRange.Below_10000, new Double(10));
-		regular.put(DiscountRange.Above_10000, new Double(20));
-
-		Map<DiscountRange, Double> premium = new HashMap<DiscountRange, Double>();
-		premium.put(DiscountRange.Below_5000, new Double(10));
-		premium.put(DiscountRange.Below_10000, new Double(20));
-		premium.put(DiscountRange.Above_10000, new Double(30));
-		discountMap.put(CustomerType.REGULAR, new CustomerDiscount(regular));
-		discountMap.put(CustomerType.PREMIUM, new CustomerDiscount(premium));
-	}
+	public static Map<CustomerType, CustomerDiscount> discountMap = DiscountCollection.getInstance().getDiscountMap();
 
 	public Double getFinalDiscountPrice(CustomerBill customerBill) {
 		Double bill = customerBill.getBasicBill();
