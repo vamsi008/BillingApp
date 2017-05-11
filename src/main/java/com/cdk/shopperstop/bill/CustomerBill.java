@@ -15,7 +15,7 @@ public class CustomerBill {
 		this.id = UUID.randomUUID();
 		this.ct = ct;
 		if (basicBill < 0) {
-			throw new IllegalArgumentException("Age cannot be negative.");
+			throw new IllegalArgumentException("Bill Amount cannot be negative.");
 		}
 		this.basicBill = basicBill;
 
