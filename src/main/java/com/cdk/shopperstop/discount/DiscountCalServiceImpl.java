@@ -3,6 +3,7 @@ package com.cdk.shopperstop.discount;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.cdk.shopperstop.bill.CustomerBill;
 import com.cdk.shopperstop.client.Customer;
 import com.cdk.shopperstop.client.CustomerType;
 
@@ -26,7 +27,10 @@ public class DiscountCalServiceImpl implements DiscountCalService {
 		discountMap.put(CustomerType.PREMIUM, new CustomerDiscount(premium));
 	}
 
-	public Double getFinalDiscountPrice(Double bill, Customer ct) {
+	public Double getFinalDiscountPrice(CustomerBill customerBill) {
+		Double bill = customerBill.getBasicBill();
+		Customer ct = customerBill.getCustomer();
+
 		if (bill == 0) {
 			return bill;
 		}
