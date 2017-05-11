@@ -1,4 +1,4 @@
-package com.cdk.shopperstop.utils;
+package com.cdk.shopperstop.app;
 
 import org.junit.Test;
 
