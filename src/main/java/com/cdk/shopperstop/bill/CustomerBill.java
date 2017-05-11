@@ -2,7 +2,7 @@ package com.cdk.shopperstop.bill;
 
 import java.util.UUID;
 
-import com.cdk.shopperstop.client.Customer;
+import com.cdk.shopperstop.customer.Customer;
 
 public class CustomerBill {
 

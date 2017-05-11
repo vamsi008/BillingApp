@@ -3,7 +3,7 @@ package com.cdk.shopperstop.app;
 import com.cdk.shopperstop.bill.CustomerBill;
 import com.cdk.shopperstop.bill.CustomerBillService;
 import com.cdk.shopperstop.bill.CustomerBillServiceImpl;
-import com.cdk.shopperstop.client.Customer;
+import com.cdk.shopperstop.customer.Customer;
 
 /**
  * Application to generate the bill.

@@ -5,8 +5,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.cdk.shopperstop.bill.CustomerBill;
-import com.cdk.shopperstop.client.Customer;
-import com.cdk.shopperstop.client.CustomerType;
+import com.cdk.shopperstop.customer.Customer;
+import com.cdk.shopperstop.customer.CustomerType;
 
 public class DiscountCalServiceImplTest {
 

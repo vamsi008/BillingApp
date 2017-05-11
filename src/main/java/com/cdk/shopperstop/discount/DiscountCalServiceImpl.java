@@ -3,8 +3,8 @@ package com.cdk.shopperstop.discount;
 import java.util.Map;
 
 import com.cdk.shopperstop.bill.CustomerBill;
-import com.cdk.shopperstop.client.Customer;
-import com.cdk.shopperstop.client.CustomerType;
+import com.cdk.shopperstop.customer.Customer;
+import com.cdk.shopperstop.customer.CustomerType;
 
 public class DiscountCalServiceImpl implements DiscountCalService {
 

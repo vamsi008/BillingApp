@@ -3,7 +3,7 @@ package com.cdk.shopperstop.discount;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.cdk.shopperstop.client.CustomerType;
+import com.cdk.shopperstop.customer.CustomerType;
 
 public class DiscountCollection {
 	
