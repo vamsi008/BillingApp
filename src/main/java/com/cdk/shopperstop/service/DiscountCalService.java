@@ -1,6 +1,6 @@
-package com.cdk.shopperstop.discount;
+package com.cdk.shopperstop.service;
 
-import com.cdk.shopperstop.customer.CustomerType;
+import com.cdk.shopperstop.pojo.CustomerType;
 
 public interface DiscountCalService {
 

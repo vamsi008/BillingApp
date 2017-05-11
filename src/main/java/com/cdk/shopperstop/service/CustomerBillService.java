@@ -1,4 +1,6 @@
-package com.cdk.shopperstop.bill;
+package com.cdk.shopperstop.service;
+
+import com.cdk.shopperstop.pojo.CustomerBill;
 
 public interface CustomerBillService {
 

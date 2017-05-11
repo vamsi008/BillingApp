@@ -1,7 +1,6 @@
-package com.cdk.shopperstop.bill;
+package com.cdk.shopperstop.service;
 
-import com.cdk.shopperstop.discount.DiscountCalService;
-import com.cdk.shopperstop.discount.DiscountCalServiceImpl;
+import com.cdk.shopperstop.pojo.CustomerBill;
 
 public class CustomerBillServiceImpl implements CustomerBillService {
 

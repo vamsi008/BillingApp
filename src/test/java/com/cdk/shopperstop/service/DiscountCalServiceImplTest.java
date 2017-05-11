@@ -1,12 +1,14 @@
-package com.cdk.shopperstop.discount;
+package com.cdk.shopperstop.service;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.cdk.shopperstop.bill.CustomerBill;
-import com.cdk.shopperstop.customer.Customer;
-import com.cdk.shopperstop.customer.CustomerType;
+import com.cdk.shopperstop.pojo.Customer;
+import com.cdk.shopperstop.pojo.CustomerBill;
+import com.cdk.shopperstop.pojo.CustomerType;
+import com.cdk.shopperstop.service.DiscountCalService;
+import com.cdk.shopperstop.service.DiscountCalServiceImpl;
 
 public class DiscountCalServiceImplTest {
 

@@ -1,4 +1,4 @@
-package com.cdk.shopperstop.discount;
+package com.cdk.shopperstop.pojo;
 
 public class DiscountDTO {
 	

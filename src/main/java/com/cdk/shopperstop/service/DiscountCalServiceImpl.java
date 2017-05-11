@@ -1,9 +1,12 @@
-package com.cdk.shopperstop.discount;
+package com.cdk.shopperstop.service;
 
 import java.util.List;
 import java.util.Map;
 
-import com.cdk.shopperstop.customer.CustomerType;
+import com.cdk.shopperstop.conf.DiscountCollection;
+import com.cdk.shopperstop.pojo.CustomerDiscount;
+import com.cdk.shopperstop.pojo.CustomerType;
+import com.cdk.shopperstop.pojo.DiscountDTO;
 
 public class DiscountCalServiceImpl implements DiscountCalService {
 

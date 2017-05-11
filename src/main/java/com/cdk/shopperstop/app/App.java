@@ -1,9 +1,9 @@
 package com.cdk.shopperstop.app;
 
-import com.cdk.shopperstop.bill.CustomerBill;
-import com.cdk.shopperstop.bill.CustomerBillService;
-import com.cdk.shopperstop.bill.CustomerBillServiceImpl;
-import com.cdk.shopperstop.customer.Customer;
+import com.cdk.shopperstop.pojo.Customer;
+import com.cdk.shopperstop.pojo.CustomerBill;
+import com.cdk.shopperstop.service.CustomerBillService;
+import com.cdk.shopperstop.service.CustomerBillServiceImpl;
 
 /**
  * Application to generate the bill.

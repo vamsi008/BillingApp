@@ -1,11 +1,13 @@
-package com.cdk.shopperstop.discount;
+package com.cdk.shopperstop.conf;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import com.cdk.shopperstop.customer.CustomerType;
+import com.cdk.shopperstop.pojo.CustomerDiscount;
+import com.cdk.shopperstop.pojo.CustomerType;
+import com.cdk.shopperstop.pojo.DiscountDTO;
 
 public class DiscountCollection {
 	
@@ -26,7 +28,7 @@ public class DiscountCollection {
 		discountList.add(discDTO2);
 		discountList.add(discDTO3);
 		
-		cdRegular.discountList=discountList;
+		cdRegular.setDiscountList(discountList);
 		
 		
 		CustomerDiscount cdPremium = new CustomerDiscount();
@@ -40,7 +42,7 @@ public class DiscountCollection {
 		discountListPremium.add(discDTO5);
 		discountListPremium.add(discDTO6);
 		
-		cdPremium.discountList=discountListPremium;
+		cdPremium.setDiscountList(discountListPremium);
 		
 		discountMap.put(CustomerType.REGULAR, cdRegular);
 		discountMap.put(CustomerType.PREMIUM, cdPremium);

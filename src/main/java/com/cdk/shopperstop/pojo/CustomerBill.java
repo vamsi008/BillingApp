@@ -1,8 +1,6 @@
-package com.cdk.shopperstop.bill;
+package com.cdk.shopperstop.pojo;
 
 import java.util.UUID;
-
-import com.cdk.shopperstop.customer.Customer;
 
 public class CustomerBill {
 

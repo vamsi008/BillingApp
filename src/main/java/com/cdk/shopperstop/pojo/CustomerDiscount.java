@@ -1,4 +1,4 @@
-package com.cdk.shopperstop.discount;
+package com.cdk.shopperstop.pojo;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -7,7 +7,7 @@ public class CustomerDiscount {
 
 	//Map<DiscountRange, Double> discounts = new HashMap<DiscountRange, Double>();
 	
-	List<DiscountDTO> discountList = new LinkedList<DiscountDTO>();
+	private List<DiscountDTO> discountList = new LinkedList<DiscountDTO>();
 
 	public List<DiscountDTO> getDiscountList() {
 		return discountList;

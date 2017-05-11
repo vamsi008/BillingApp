@@ -1,4 +1,4 @@
-package com.cdk.shopperstop.customer;
+package com.cdk.shopperstop.pojo;
 
 public enum CustomerType {
 	
