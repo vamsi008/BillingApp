@@ -28,5 +28,12 @@ DiscountDTO:: Discount DTO will contain all the information of the discount like
 CustomerType:: Will help distinguish the customerType as "Premium","Regular"
 
 
+**Execution**
+
+java -jar shopperStopUtils-1.0-SNAPSHOT.jar  "Billamount" "TypeOfCustomer"
+
+eg :: java -jar shopperStopUtils-1.0-SNAPSHOT.jar  10000 premium
+
+
 
 
