@@ -20,7 +20,7 @@ public class App {
 			}
 			Double bill = Double.parseDouble(args[0]);
 			CustomerBill cb = new CustomerBill(bill, new Customer(args[1]));
-			cb = billService.generateBill(cb);
+			billService.generateBill(cb);
 			System.out.println("The Final bill after discount ::" + cb.getFinalBill());
 		} catch (NumberFormatException e) {
 			System.out.println("Proper number syntax have to be used.");

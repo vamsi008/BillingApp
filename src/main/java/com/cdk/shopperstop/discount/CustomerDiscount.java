@@ -1,22 +1,22 @@
 package com.cdk.shopperstop.discount;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.LinkedList;
+import java.util.List;
 
 public class CustomerDiscount {
 
-	Map<DiscountRange, Double> discounts = new HashMap<DiscountRange, Double>();
+	//Map<DiscountRange, Double> discounts = new HashMap<DiscountRange, Double>();
+	
+	List<DiscountDTO> discountList = new LinkedList<DiscountDTO>();
 
-	public CustomerDiscount(Map<DiscountRange, Double> discounts) {
-		this.discounts = discounts;
+	public List<DiscountDTO> getDiscountList() {
+		return discountList;
 	}
 
-	public Map<DiscountRange, Double> getDiscounts() {
-		return discounts;
+	public void setDiscountList(List<DiscountDTO> discountList) {
+		this.discountList = discountList;
 	}
+	
 
-	public void setDiscounts(Map<DiscountRange, Double> discounts) {
-		this.discounts = discounts;
-	}
 
 }

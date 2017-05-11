@@ -7,10 +7,8 @@ public class CustomerBillServiceImpl implements CustomerBillService {
 
 	DiscountCalService ds = new DiscountCalServiceImpl();
 
-	public CustomerBill generateBill(CustomerBill bill) {
-		bill.setFinalBill(ds.getFinalDiscountPrice(bill));
-		return bill;
-
+	public void generateBill(CustomerBill bill) {
+		bill.setFinalBill(ds.getFinalPrice(bill.getBasicBill(), bill.getCustomer().getType()));
 	}
 
 }

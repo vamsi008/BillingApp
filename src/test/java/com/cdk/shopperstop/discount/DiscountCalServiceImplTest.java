@@ -13,7 +13,7 @@ public class DiscountCalServiceImplTest {
 	DiscountCalService ds = new DiscountCalServiceImpl();
 
 	@Test
-	public void getFinalDiscountPriceTest() {
+	public void getFinalPriceTest() {
 		Customer ctp = new Customer(CustomerType.PREMIUM);
 		Customer ctr = new Customer(CustomerType.REGULAR);
 
@@ -29,28 +29,28 @@ public class DiscountCalServiceImplTest {
 		CustomerBill billp5 = new CustomerBill(new Double(12000), ctp);
 		CustomerBill billr5 = new CustomerBill(new Double(12000), ctr);
 
-		Double value = ds.getFinalDiscountPrice(billp1);
-		// Double value=ds.getFinalDiscountPrice(new Double(0), ctp);
+		Double value = ds.getFinalPrice(billp1.getBasicBill(), billp1.getCustomer().getType());
+		// Double value=ds.getFinalPrice(new Double(0), ctp);
 		assertEquals(value, 12000, 0.00);
-		value = ds.getFinalDiscountPrice(billr1);
+		value = ds.getFinalPrice(billr1.getBasicBill(),billr1.getCustomer().getType());
 		assertEquals(value, 13500, 0.00);
-		value = ds.getFinalDiscountPrice(billp2);
+		value = ds.getFinalPrice(billp2.getBasicBill(),billp2.getCustomer().getType());
 		assertEquals(value, 0, 0.00);
-		value = ds.getFinalDiscountPrice(billr2);
+		value = ds.getFinalPrice(billr2.getBasicBill(), billr2.getCustomer().getType());
 		assertEquals(value, 0, 0.00);
-		value = ds.getFinalDiscountPrice(billp3);
+		value = ds.getFinalPrice(billp3.getBasicBill(),billp3.getCustomer().getType());
 		assertEquals(value, 4500, 0.00);
-		value = ds.getFinalDiscountPrice(billr3);
+		value = ds.getFinalPrice(billr3.getBasicBill(),billr3.getCustomer().getType());
 		assertEquals(value, 5000, 0.00);
 
-		value = ds.getFinalDiscountPrice(billp4);
+		value = ds.getFinalPrice(billp4.getBasicBill(),billp4.getCustomer().getType());
 		assertEquals(value, 8500, 0.00);
-		value = ds.getFinalDiscountPrice(billr4);
+		value = ds.getFinalPrice(billr4.getBasicBill(),billr4.getCustomer().getType());
 		assertEquals(value, 9500, 0.00);
 
-		value = ds.getFinalDiscountPrice(billp5);
+		value = ds.getFinalPrice(billp5.getBasicBill(),billp5.getCustomer().getType());
 		assertEquals(value, 9900, 0.00);
-		value = ds.getFinalDiscountPrice(billr5);
+		value = ds.getFinalPrice(billr5.getBasicBill(),billr5.getCustomer().getType());
 		assertEquals(value, 11100, 0.00);
 
 	}

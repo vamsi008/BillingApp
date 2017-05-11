@@ -1,9 +1,9 @@
 package com.cdk.shopperstop.discount;
 
-import com.cdk.shopperstop.bill.CustomerBill;
+import com.cdk.shopperstop.customer.CustomerType;
 
 public interface DiscountCalService {
 
-	public Double getFinalDiscountPrice(CustomerBill bill);
+	public Double getFinalPrice(Double billAmount, CustomerType ctype);
 
 }

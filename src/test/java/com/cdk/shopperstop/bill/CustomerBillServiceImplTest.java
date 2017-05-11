@@ -22,10 +22,10 @@ public class CustomerBillServiceImplTest {
 	public void generateBillTest() {
 
 		CustomerBill bill1 = new CustomerBill(new Double(15000), new Customer(CustomerType.PREMIUM));
-		bill1 = cs.generateBill(bill1);
+		cs.generateBill(bill1);
 		assertEquals(bill1.getFinalBill(), 12000, 0.00);
 		CustomerBill bill2 = new CustomerBill(new Double(15000), new Customer(CustomerType.REGULAR));
-		bill2 = cs.generateBill(bill2);
+		cs.generateBill(bill2);
 		assertEquals(bill2.getFinalBill(), 13500, 0.00);
 	}
 

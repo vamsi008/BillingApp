@@ -1,68 +1,40 @@
 package com.cdk.shopperstop.discount;
 
+import java.util.List;
 import java.util.Map;
 
-import com.cdk.shopperstop.bill.CustomerBill;
-import com.cdk.shopperstop.customer.Customer;
 import com.cdk.shopperstop.customer.CustomerType;
 
 public class DiscountCalServiceImpl implements DiscountCalService {
 
 	public static Map<CustomerType, CustomerDiscount> discountMap = DiscountCollection.getInstance().getDiscountMap();
 
-	public Double getFinalDiscountPrice(CustomerBill customerBill) {
-		Double bill = customerBill.getBasicBill();
-		Customer ct = customerBill.getCustomer();
-
-		if (bill == 0) {
-			return bill;
+	public Double getFinalPrice(Double billAmount, CustomerType ctype) {
+		if (billAmount == null || billAmount < 0) {
+			throw new IllegalArgumentException("Invalid bill amount");
+		}
+		if (billAmount == 0) {
+			return new Double(0);
 		}
 
-		CustomerDiscount discount = discountMap.get(ct.getType());
-		if (discount == null) {
-			return bill;
-		}
-		Map<DiscountRange, Double> tempDiscounts = discount.getDiscounts();
+		CustomerDiscount customerDiscount = discountMap.get(ctype);
+		List<DiscountDTO> discountSlab = customerDiscount.getDiscountList();
 
-		Double temp = bill;
-		Double totalBill = new Double(0);
-		if (temp <= 5000) {
-			Double precentageDeduction = tempDiscounts.get(DiscountRange.Below_5000);
-			if (precentageDeduction == null) {
-				precentageDeduction = new Double(0);
+		int discountSlabCount = discountSlab.size() - 1;
+		Double totalDiscountAmount = new Double(0);
+
+		Double basicBillAmount = billAmount;
+		while (billAmount > 0 && discountSlabCount >= 0) {
+			DiscountDTO discount = discountSlab.get(discountSlabCount);
+			if (billAmount >= discount.getLowerBound()) {
+				Double amountToBeDiscounted = billAmount - discount.getLowerBound();
+				totalDiscountAmount += amountToBeDiscounted * (discount.getDiscount() / 100);
+				billAmount = discount.getLowerBound();
 			}
-			Double disc = temp * (precentageDeduction / 100);
-			totalBill = temp - disc;
-		} else {
-
-			Double precentageDeduction_5000 = tempDiscounts.get(DiscountRange.Below_5000);
-			if (precentageDeduction_5000 == null) {
-				precentageDeduction_5000 = new Double(0);
-			}
-			Double precentageDeduction_10000 = tempDiscounts.get(DiscountRange.Below_10000);
-			if (precentageDeduction_10000 == null) {
-				precentageDeduction_10000 = new Double(0);
-			}
-			if (temp > 5000 && temp <= 10000) {
-
-				Double disc1 = 5000 * (precentageDeduction_5000 / 100);
-				Double disc2 = (temp - 5000) * (precentageDeduction_10000 / 100);
-				totalBill = temp - (disc1 + disc2);
-
-			} else {
-				Double precentageDeduction_above_10000 = tempDiscounts.get(DiscountRange.Above_10000);
-				if (precentageDeduction_above_10000 == null) {
-					precentageDeduction_above_10000 = new Double(0);
-				}
-				Double disc1 = 5000 * (precentageDeduction_5000 / 100);
-				Double disc2 = 5000 * (precentageDeduction_10000 / 100);
-				Double disc3 = (temp - 10000) * (precentageDeduction_above_10000 / 100);
-				totalBill = temp - (disc1 + disc2 + disc3);
-			}
-
+			discountSlabCount--;
 		}
 
-		return totalBill;
+		return basicBillAmount - totalDiscountAmount;
 	}
 
 }
