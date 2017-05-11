@@ -15,18 +15,6 @@ public class DiscountCollection {
 	private DiscountCollection(){
 		
 		discountMap = new HashMap<CustomerType, CustomerDiscount>();
-		/*Map<DiscountRange, Double> regular = new HashMap<DiscountRange, Double>();
-		regular.put(DiscountRange.Below_5000, new Double(0));
-		regular.put(DiscountRange.Below_10000, new Double(10));
-		regular.put(DiscountRange.Above_10000, new Double(20));
-
-		Map<DiscountRange, Double> premium = new HashMap<DiscountRange, Double>();
-		premium.put(DiscountRange.Below_5000, new Double(10));
-		premium.put(DiscountRange.Below_10000, new Double(20));
-		premium.put(DiscountRange.Above_10000, new Double(30));
-		discountMap.put(CustomerType.REGULAR, new CustomerDiscount(regular));
-		discountMap.put(CustomerType.PREMIUM, new CustomerDiscount(premium));*/
-		
 		CustomerDiscount cdRegular = new CustomerDiscount();
 		
 		List<DiscountDTO> discountList = new LinkedList<DiscountDTO>();
